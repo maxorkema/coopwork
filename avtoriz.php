@@ -10,7 +10,7 @@
   <body>
 <form class="form-1">
     <p class="field">
-        <input type="text" name="login" placeholder="Логін">
+        <input type="text" name="login" placeholder="Пошта">
         <i class="icon-user icon-large"></i>
     </p>
         <p class="field">
