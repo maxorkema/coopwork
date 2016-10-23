@@ -23,7 +23,26 @@
   <div class="table"><table >
      <caption>Наші фанати</caption>
    <tr><th>Ім'я</th><th>Прізвище</th></tr>
-   <tr><td>*тут імя*</td><td>*тут прізв*</td></tr>
+   <?php
+$request = "SELECT name, surname FROM usr";
+$result = mysql_query($request);
+if (!mysql_error()) {
+  while ($row = mysql_fetch_row($result)) {
+    //echo '<div class="new">';
+	//echo '<span id="title" name="title" style="width:100%;">'.$row[1].'</span>';
+	//echo '<span id="maintext" name="maintext">'.$row[0].'</span>';
+	//echo '<span id="date" name="date">&nbsp;&nbsp;&nbsp;'.$row[2].'</span>';
+	//echo '</div>';
+	echo '<tr><td>'.$row[0].'</td>';
+	echo '<td>'.$row[1].'</td></tr>';
+    };
+  }
+else {
+  echo "Ошибка БД в запросе ".$request.". MySQL пишет ". mysql_error();
+};
+mysql_free_result ($result);
+?>
+   
   </table>
 </div>
 </body>
