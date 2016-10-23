@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Авторизація</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
       </head>
   <body>
   <div class="h1"><img src="undead_n.png" width="150" 

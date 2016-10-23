@@ -1,4 +1,29 @@
 <?php require_once("db/connection.php"); ?>
+<?php if (isset($_POST['rpassword'])) {
+          $id_user=null;
+          $user_name=$_POST['user_name'];
+          $user_surname=$_POST['user_surname'];
+          $city=$_POST['city'];
+          $email=$_POST['email'];
+          $password=$_POST['password'];
+          $rpassword=$_POST['rpassword'];
+              $query_str="SELECT * FROM `usr` WHERE email LIKE '".$email."'"; 
+              $query=mysql_query($query_str);
+              $myrow = mysql_fetch_array($query); 
+              if ($myrow['name']!=$user_name) {    
+                if ($myrow['email']!=$email) {  
+
+                  $query_str="INSERT INTO `un`.`usr` (`id`, `name`, `surname`, `city`, `email`, `pass`) 
+                  VALUES (NULL, '$user_name', '$user_surname', '$city', '$email', '$password')";
+                  mysql_query($query_str);
+                  mysql_close();
+
+                  header("Location: index.php");
+                }else{header("Location: avtoriz.php");}
+              }else{header("Location: reg.php");}
+        }
+
+?>
 <!DOCTYPE html>
 <html lang="ru">
   <head>
@@ -11,7 +36,7 @@
   <body>
       <div class="h1"><img src="undead_n.png" width="150" 
    height="150" alt="Logo"><h1>Undead</h1><h2>Nation</h2></div>
-      <form class="form-2">
+      <form method="post" class="form-2">
       <a>Реєстрація</a>
         <section class="container one">
           <p><label for="user_name">Ім'я            </label>
@@ -34,7 +59,7 @@
           </p>
         </section>        
         <section class="container two">
-        <button type="submit">Зареєструватися</button>
+        <button type="submit" name="rpassword" id="rpassword">Зареєструватися</button>
         </section>
       </form>
       
