@@ -22,19 +22,15 @@
 Має свої команди в різних ігрових дисциплінах, зокрема Dota 2, Counter-Strike, FIFA, StarCraft II, World of Tanks, League of Legends.</p></div>
   <div class="table"><table >
      <caption>Наші фанати</caption>
-   <tr><th>Ім'я</th><th>Прізвище</th></tr>
+   <tr><th>Ім'я</th><th>Прізвище</th><th>Місто</th></tr>
    <?php
-$request = "SELECT name, surname FROM usr";
+$request = "SELECT name, surname, city FROM usr";
 $result = mysql_query($request);
 if (!mysql_error()) {
   while ($row = mysql_fetch_row($result)) {
-    //echo '<div class="new">';
-	//echo '<span id="title" name="title" style="width:100%;">'.$row[1].'</span>';
-	//echo '<span id="maintext" name="maintext">'.$row[0].'</span>';
-	//echo '<span id="date" name="date">&nbsp;&nbsp;&nbsp;'.$row[2].'</span>';
-	//echo '</div>';
 	echo '<tr><td>'.$row[0].'</td>';
-	echo '<td>'.$row[1].'</td></tr>';
+	echo '<td>'.$row[1].'</td>';
+  echo '<td>'.$row[2].'</td></tr>';
     };
   }
 else {
