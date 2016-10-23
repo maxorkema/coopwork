@@ -1,12 +1,10 @@
 <?php require_once("db/connection.php"); ?>
 <?php if (isset($_POST['rpassword'])) {
-          $id_user=null;
           $user_name=$_POST['user_name'];
           $user_surname=$_POST['user_surname'];
           $city=$_POST['city'];
           $email=$_POST['email'];
           $password=$_POST['password'];
-          $rpassword=$_POST['rpassword'];
               $query_str="SELECT * FROM `usr` WHERE email LIKE '".$email."'"; 
               $query=mysql_query($query_str);
               $myrow = mysql_fetch_array($query); 
@@ -17,7 +15,6 @@
                   VALUES (NULL, '$user_name', '$user_surname', '$city', '$email', '$password')";
                   mysql_query($query_str);
                   mysql_close();
-
                   header("Location: index.php");
                 }else{header("Location: avtoriz.php");}
               }else{header("Location: reg.php");}
@@ -40,13 +37,13 @@
       <a>Реєстрація</a>
         <section class="container one">
           <p><label for="user_name">Ім'я            </label>
-            <input type="text" name="user_name" pattern="^[А-Яа-яЁё\s]+$"><span></span></p>
+            <input type="text" name="user_name" pattern="^[А-Яа-яЁёІіЇї\s]+$"><span></span></p>
           
           <p><label for="user_surname">Прізвище  </label>
-            <input type="text" name="user_surname" pattern="^[А-Яа-яЁё\s]+$"><span></span></p>
+            <input type="text" name="user_surname" pattern="^[А-Яа-яЁёІіЇї\s]+$"><span></span></p>
           
           <p><label for="city">Місто        </label>
-            <input type="text" name="city" pattern="^[А-Яа-яЁё\s]+$"><span></span></p>
+            <input type="text" name="city" pattern="^[А-Яа-яЁёІіЇї\s]+$"><span></span></p>
           
           <p><label for="email">Ел.Пошта </label>
             <input type="email" name="email"><span></span></p>
