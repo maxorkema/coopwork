@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="styles.css">
 <title>UN</title>
 </head>
 <body id="kontent">
-<div class="h1"><h1 align="center">Undead Nation [UN]</h1></div>
-<div class="pikcha"> <p><a href="http://steamcommunity.com/groups/un_na"><img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/63/636afd798b9262eedf0a7e905af9f24a6aa0466e_full.jpg" width="50" 
-   height="50" alt="Logo"></a></p><div>
-<div class="sostav"><p align="left">Склад команди:</p>
+<div class="h1"><img src="undead_n.png" width="150" 
+   height="150" alt="Logo"><h1>Undead</h1><h2>Nation</h2></div>
+<div class="sostav"><p>Склад команди:</p>
 <ul>
  <li>Ваня "nG." Горбатюк</li>
  <li>Андрій "OD'd by an accident" Мазуренко</li>
