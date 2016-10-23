@@ -15,8 +15,8 @@
                   VALUES (NULL, '$user_name', '$user_surname', '$city', '$email', '$password')";
                   mysql_query($query_str);
                   mysql_close();
-                  header("Location: index.php");
-                }else{header("Location: avtoriz.php");}
+                  header("Location: main.php");
+                }else{header("Location: index.php");}
               }else{header("Location: reg.php");}
         }
 
