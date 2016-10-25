@@ -1,4 +1,4 @@
-<?php require_once("db/connection.php"); ?>
+﻿<?php require_once("db/connection.php"); ?>
 <?php if (isset($_POST['rpassword'])) {
           $user_name=$_POST['user_name'];
           $user_surname=$_POST['user_surname'];
@@ -10,7 +10,6 @@
               $myrow = mysql_fetch_array($query); 
               if ($myrow['name']!=$user_name) {    
                 if ($myrow['email']!=$email) {  
-
                   $query_str="INSERT INTO `un`.`usr` (`id`, `name`, `surname`, `city`, `email`, `pass`) 
                   VALUES (NULL, '$user_name', '$user_surname', '$city', '$email', '$password')";
                   mysql_query($query_str);
@@ -19,7 +18,6 @@
                 }else{header("Location: index.php");}
               }else{header("Location: reg.php");}
         }
-
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -36,19 +34,19 @@
       <form method="post" class="form-2">
       <a>Реєстрація</a>
         <div class="container one">
-          <p><label for="user_name">Ім'я            </label>
+          <p><label for="user_name">Ім'я            </label>
             <input type="text" name="user_name" id="user_name" pattern="^[А-Яа-яЁёІіЇї\s]+$"><span></span></p>
           
-          <p><label for="user_surname">Прізвище  </label>
+          <p><label for="user_surname">Прізвище  </label>
             <input type="text" name="user_surname" id="user_surname" pattern="^[А-Яа-яЁёІіЇї\s]+$"><span></span></p>
           
-          <p><label for="city">Місто        </label>
+          <p><label for="city">Місто        </label>
             <input type="text" name="city" id="city" pattern="^[А-Яа-яЁёІіЇї\s]+$"><span></span></p>
           
-          <p><label for="email">Ел.Пошта </label>
+          <p><label for="email">Ел.Пошта </label>
             <input type="email" name="email" id="email"><span></span></p>
           
-          <p><label for="password">Пароль     </label>
+          <p><label for="password">Пароль     </label>
             <input type="password" name="password" id="password"><span></span></p>
           
           <p><label for="password">Повторіть</label>
